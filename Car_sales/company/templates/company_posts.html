@@ -1,0 +1,13 @@
+<h1>Posts for {{ company.name }}</h1>
+
+{% if posts %}
+    <ul>
+        {% for post in posts %}
+            <li>
+                <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No posts available for this company.</p>
+{% endif %}
